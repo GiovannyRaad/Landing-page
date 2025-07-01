@@ -1,0 +1,89 @@
+html {
+    font-size: 30px;
+}
+
+.bg{
+    background-color: blueviolet;
+    
+}
+
+.mainsection{
+    display: flex;
+    background-color: rgb(0, 43, 122);
+    align-content: center;
+    justify-content: center;
+    height: 65vh;
+    width: 100vw;
+    gap: 25px;
+    
+
+}
+
+.mainsection > :nth-child(1){
+    display: flex;
+    height: inherit;
+    flex: 1;
+    align-items: center;
+    justify-content: right;
+
+    
+
+}
+
+.mainsection > :nth-child(2){
+    height: inherit;
+    align-content: center;
+    flex: 1;
+    
+    
+}
+
+.coverimg{
+    height: 50%;
+    
+}
+
+.maintitle{
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 50%;
+    aspect-ratio: 16 / 9;
+    
+    
+}
+
+.maintitle > :nth-child(1){
+    font-size: 1.3rem;
+    color: rgb(255, 255, 255);
+}
+
+.maintitle > :nth-child(2){
+    font-size: 0.75rem;
+    color: rgb(196, 196, 196)
+}
+
+.generalbutton{
+    background-color: darkcyan;
+    color: white;
+
+    font-size: 0.6em;
+    font-weight: bold;
+
+    /* fix the height */
+    height: 1.5rem;
+
+    /* aspect ratio */
+    aspect-ratio: 16 / 7;
+
+    /* flex item controls */
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    /* display block/inline-block */
+    display: inline-block;
+
+    border-radius: 10px;
+    border: none;
+    
+
+}
