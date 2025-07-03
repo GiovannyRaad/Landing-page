@@ -2,14 +2,15 @@ html {
     font-size: 30px;
 }
 
+
 .bg{
     background-color: blueviolet;
     
 }
 
-.mainsection{
+.mainsection, .infos{ /*main sections of the page */
     display: flex;
-    background-color: rgb(0, 43, 122);
+    background-color: rgb(28, 38, 56);
     align-content: center;
     justify-content: center;
     height: 65vh;
@@ -19,18 +20,20 @@ html {
 
 }
 
-.mainsection > :nth-child(1){
+
+
+.mainsection > :nth-child(1){ /*Main title div */
     display: flex;
     height: inherit;
     flex: 1;
     align-items: center;
-    justify-content: right;
+    justify-content: center;
 
     
 
 }
 
-.mainsection > :nth-child(2){
+.mainsection > :nth-child(2){ /*image div*/
     height: inherit;
     align-content: center;
     flex: 1;
@@ -43,7 +46,7 @@ html {
     
 }
 
-.maintitle{
+.maintitle{ 
     flex-direction: column;
     flex-wrap: wrap;
     height: 50%;
@@ -53,12 +56,13 @@ html {
 }
 
 .maintitle > :nth-child(1){
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: rgb(255, 255, 255);
+    font-weight: bold;
 }
 
-.maintitle > :nth-child(2){
-    font-size: 0.75rem;
+.maintitle > :nth-child(2){ /* desc */
+    font-size: 0.6rem;
     color: rgb(196, 196, 196)
 }
 
@@ -73,7 +77,7 @@ html {
     height: 1.5rem;
 
     /* aspect ratio */
-    aspect-ratio: 16 / 7;
+    aspect-ratio: 16 / 5;
 
     /* flex item controls */
     flex-shrink: 0;
@@ -86,4 +90,64 @@ html {
     border: none;
     
 
+}
+
+.infos {
+    background-color: white;
+    flex-direction: column;
+    
+    
+    
+}
+
+.infos > :nth-child(1){ /*title */
+    flex: 0.2;
+    text-align: center;
+    
+}
+
+
+
+.infocards{
+    display: flex;
+    flex: 0.8;
+    justify-content: center;
+    max-height: 80%;
+    gap: 5%;
+    
+}
+.infocard {
+    aspect-ratio: 1 / 2;
+    height: 100%;
+    
+    
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.infoimg{
+    aspect-ratio: 1 / 1;
+    flex:0.5;
+    height: 50%;
+    border: 5px solid rgb(0, 132, 255);
+    border-radius: 15px;
+    overflow: hidden;
+    
+    
+}
+
+.infoimg > :first-child{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    aspect-ratio: inherit;
+    
+    
+}
+
+.caption{
+    flex:0.5;
+    text-align: center;
+    font-weight: bold;
 }
