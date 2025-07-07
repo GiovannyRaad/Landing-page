@@ -1,5 +1,5 @@
 html {
-    font-size: 30px;
+    font-size: 188%;
     
 }
 
@@ -14,6 +14,9 @@ html, body { /* makes body cover the whole page */
 
 .bg{
     background-color: blueviolet;
+    height: 100%;
+    width: 100%;
+    position: absolute;
 
     
 }
@@ -23,7 +26,7 @@ html, body { /* makes body cover the whole page */
     background-color: rgb(28, 38, 56);
     align-content: center;
     justify-content: center;
-    height: 65vh;
+    height: 19rem;
     width: 100%;
     gap: 25px;
     
@@ -34,10 +37,11 @@ html, body { /* makes body cover the whole page */
 
 .mainsection > :nth-child(1){ /*Main title div */
     display: flex;
-    height: inherit;
+    max-height: inherit;
     flex: 1;
     align-items: center;
     justify-content: center;
+    
 
     
 
@@ -163,6 +167,39 @@ html, body { /* makes body cover the whole page */
 }
 
 
-.scrollingimages{
-    background-color: rgb(197, 197, 197);
+.scrollingimages{ /* the section */
+    background-color: rgb(214, 214, 214);
+    align-items: center;
+    justify-content: center;
+}
+
+.scrollcontainer{ /* contains the scrollimgs, is inside scrollingimges */
+    display: flex;
+    gap: 7vw;
+    animation: horizontalImgScroll 20s linear infinite alternate;
+
+
+}
+
+.scrollimg{
+    aspect-ratio: 4 / 5;
+    width: 17vw;
+    min-width: 200px;
+    background-color: brown;
+    border: 5px solid black;
+    border-radius: 7px;
+    overflow: hidden;
+
+}
+
+.scrollimg > *{
+    height: 100%;
+    width: 100%;
+    aspect-ratio: inherit;
+    object-fit: cover;
+}
+
+@keyframes horizontalImgScroll {
+    0% {transform: translateX(-25%); }
+    100% {transform: translateX(25%);}
 }
