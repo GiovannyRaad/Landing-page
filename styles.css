@@ -1,5 +1,5 @@
 html {
-    font-size: 188%;
+    
     
 }
 
@@ -9,6 +9,7 @@ html, body { /* makes body cover the whole page */
   background-color: #000;
   height: 100%;
   width: 100%;
+  overflow-x: hidden;
 }
 
 
@@ -21,14 +22,17 @@ html, body { /* makes body cover the whole page */
     
 }
 
-.mainsection, .infos, .scrollingimages{ /*main sections of the page */
+.mainsection, .infos, .scrollingimages, .callForAction{ /*main sections of the page */
     display: flex;
     background-color: rgb(28, 38, 56);
     align-content: center;
     justify-content: center;
-    height: 19rem;
+    height: 65vh;
+    min-height: 28rem;
     width: 100%;
     gap: 25px;
+    overflow-x: auto; /* allows horizontal scrolling */
+    
     
 
 }
@@ -48,7 +52,6 @@ html, body { /* makes body cover the whole page */
 }
 
 .mainsection > :nth-child(2){ /*image div*/
-    height: inherit;
     align-content: center;
     flex: 1;
     
@@ -70,13 +73,13 @@ html, body { /* makes body cover the whole page */
 }
 
 .maintitle > :nth-child(1){
-    font-size: 1.5rem;
+    font-size: 2.8rem;
     color: rgb(255, 255, 255);
     font-weight: bold;
 }
 
 .maintitle > :nth-child(2){ /* desc */
-    font-size: 0.6rem;
+    font-size: 1.1rem;
     color: rgb(196, 196, 196)
 }
 
@@ -84,11 +87,11 @@ html, body { /* makes body cover the whole page */
     background-color: darkcyan;
     color: white;
 
-    font-size: 0.6em;
+    font-size: 1.1em;
     font-weight: bold;
 
     /* fix the height */
-    height: 1.5rem;
+    height: 2.8rem;
 
     /* aspect ratio */
     aspect-ratio: 16 / 5;
@@ -109,6 +112,7 @@ html, body { /* makes body cover the whole page */
 .infos {
     background-color: white;
     flex-direction: column;
+    font-size: 2rem;
     
     
     
@@ -171,6 +175,8 @@ html, body { /* makes body cover the whole page */
     background-color: rgb(214, 214, 214);
     align-items: center;
     justify-content: center;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 .scrollcontainer{ /* contains the scrollimgs, is inside scrollingimges */
@@ -185,7 +191,7 @@ html, body { /* makes body cover the whole page */
     aspect-ratio: 4 / 5;
     width: 17vw;
     min-width: 200px;
-    background-color: brown;
+    background-color: rgb(255, 255, 255);
     border: 5px solid black;
     border-radius: 7px;
     overflow: hidden;
@@ -202,4 +208,18 @@ html, body { /* makes body cover the whole page */
 @keyframes horizontalImgScroll {
     0% {transform: translateX(-25%); }
     100% {transform: translateX(25%);}
+}
+
+.callForAction {
+    background-color: white;
+    align-items: center;
+    height: 28rem;
+}
+
+.signupwrapper { /* bottom sign up box */
+    display: flex;
+    height: 40%;
+    width: 75%;
+    background-color: rgb(48, 130, 185);
+
 }
