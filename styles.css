@@ -261,3 +261,12 @@ html, body { /* makes body cover the whole page */
 .signupwrapper p {
     margin: 0;
 }
+
+.footer {
+    background-color: rgb(28, 38, 56);
+    color: white;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
+}
