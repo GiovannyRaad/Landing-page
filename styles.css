@@ -83,15 +83,15 @@ html, body { /* makes body cover the whole page */
     color: rgb(196, 196, 196)
 }
 
-.generalbutton{
+.generalbutton{ /* button tempplate */
     background-color: darkcyan;
     color: white;
 
-    font-size: 1.1em;
+    font-size: 1rem;
     font-weight: bold;
 
     /* fix the height */
-    height: 2.8rem;
+    height: 3rem;
 
     /* aspect ratio */
     aspect-ratio: 16 / 5;
@@ -175,7 +175,7 @@ html, body { /* makes body cover the whole page */
     background-color: rgb(214, 214, 214);
     align-items: center;
     justify-content: center;
-    overflow-x: auto;
+    overflow-x: hidden; /* hides the scrollbar */
     white-space: nowrap;
 }
 
@@ -221,5 +221,43 @@ html, body { /* makes body cover the whole page */
     height: 40%;
     width: 75%;
     background-color: rgb(48, 130, 185);
+    border-radius: 10px;
+    
+    
 
+}
+
+.signupwrapper > :nth-child(1) {
+    flex: 0.75;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.signupwrapper > :nth-child(2) {
+    align-content: center;
+    
+}
+
+.signupwrapper button {
+    border: 2px solid white;
+    background-color: transparent;
+    height: 35%;
+    font-size: 1.3rem;
+
+}
+.signupwrapper h3 {
+    font-size: 2.2rem;
+}
+
+.signupwrapper p {
+    font-size: 1.2rem;
+}
+
+.signupwrapper h3,
+.signupwrapper p {
+    margin: 0;
 }
