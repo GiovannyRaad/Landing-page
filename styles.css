@@ -83,7 +83,11 @@ html, body { /* makes body cover the whole page */
     color: rgb(196, 196, 196)
 }
 
+
 .generalbutton{ /* button tempplate */
+    position: relative; /* allows ::before to be position relative to button */
+    overflow: hidden;
+    ;
     background-color: darkcyan;
     color: white;
 
@@ -106,15 +110,50 @@ html, body { /* makes body cover the whole page */
     border-radius: 10px;
     border: none;
     
+    transition: all 0.5s ease-in-out; /* smooth transition for hover effect */
+    
+   
+}
 
+.generalbutton::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(
+    0deg, 
+    transparent, 
+    transparent 10%, 
+    rgba(0,255,255,0.5)
+  );
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    object-fit: cover;
+
+    /* positions top left (but outside) */
+    top: 0;
+    left: -100%;
+
+    rotate: 45deg;
+    transition: all 0.5s ease-in-out; /* smooth transition for hover effect */
+    
+
+}
+
+.generalbutton:hover::before{
+    left: 100%; /* moves the background to the right on hover */
+}
+
+.generalbutton:hover {
+    color: rgb(0, 0, 0); /* changes text color on hover */
+    background-color: rgb(255, 255, 255); /* changes background color on hover */
+    box-shadow: 0 0px 5px rgb(255, 255, 255);
 }
 
 .infos {
     background-color: white;
     flex-direction: column;
     font-size: 2rem;
-    
-    
+    overflow: visible; /* allows the infocards to overflow (content inside is slightly taller) */
     
 }
 
@@ -132,6 +171,7 @@ html, body { /* makes body cover the whole page */
     justify-content: center;
     max-height: 80%;
     gap: 5%;
+    
     
 }
 .infocard {
@@ -270,3 +310,69 @@ html, body { /* makes body cover the whole page */
     align-items: center;
     justify-content: center;    
 }
+
+.header {
+    background-color: rgb(28, 38, 56);
+    color: white;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    gap: 1rem;
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.headerimage {
+    aspect-ratio: 1 / 1;
+    height: 100%;
+    margin: 1%;
+}
+
+.headerimage img{
+    height: 100%;
+    width: 100%;
+    aspect-ratio: inherit;
+    object-fit: cover;
+}
+
+.headertext a {
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    
+}
+
+.navbar {
+    display: flex;
+    margin-left: auto;
+    margin-right: 20%;
+}
+
+.navlist {
+    display: flex;
+    gap: 2rem;
+    
+}
+
+.navlist li {
+    list-style: none;
+    
+}
+
+.navlist a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+
+@media (max-width: 960px) {
+    .headertext{
+        width: 0%;
+        display: none;
+    }
+}
+    
