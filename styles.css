@@ -1,5 +1,6 @@
 /* File: styles.css */
 /* This file contains the styles for the landing page */
+
 html, body { /* makes body cover the whole page */
   margin: 0;
   padding: 0;
@@ -67,6 +68,7 @@ html, body { /* makes body cover the whole page */
     flex-wrap: wrap;
     height: 50%;
     aspect-ratio: 16 / 9;
+    
     
     
 }
@@ -171,6 +173,8 @@ html, body { /* makes body cover the whole page */
     justify-content: center;
     max-height: 80%;
     gap: 5%;
+
+    font-size: clamp(1rem, 6vw, 2rem); /* responsive font size */
     
     
 }
@@ -513,6 +517,46 @@ html, body { /* makes body cover the whole page */
     }
 }
 
+@media (max-width: 768px) {
 
+    html, body {
+        width: 100vw;
+        overflow: hidden;
+    }
 
+    .headertext, .navbar {
+        display: none; /* hides the header text and navbar on small screens */;
+    }
+
+    .mainsection > :nth-child(2) {
+        display:none; /* hides the image on small screens */
+    }
+
+    .mainsection {
+    flex-direction: column;
+    height: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;;
+  }
+
+  .infocards {
     
+    display: flex;
+    flex-wrap: wrap;
+    
+  }
+
+  .infocard {
+    width: 40%;
+    height: auto;
+    overflow: hidden;
+    flex: none;
+  }
+
+  .scrollingimages {
+    display: none;
+    
+  }
+
+
+}
