@@ -552,7 +552,7 @@ html, body { /* makes body cover the whole page */
     
 
     .header {
-        position: static;
+        position: relative;
         width: 100%;     
     }
 
@@ -620,6 +620,8 @@ html, body { /* makes body cover the whole page */
     flex: none;
     aspect-ratio: 2 / 3;
     gap: 0%;
+
+    
   }
 
   .infoimg {
@@ -683,7 +685,6 @@ html, body { /* makes body cover the whole page */
     bottom: -0.5%;
     left:0;
   }
-
 
 }
 
