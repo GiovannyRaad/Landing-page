@@ -24,6 +24,7 @@ html, body { /* makes body cover the whole page */
 
 .mainsection, .infos, .scrollingimages, .callForAction{ /*main sections of the page */
     display: flex;
+    position: relative;
     background-color: rgb(28, 38, 56);
     align-content: center;
     justify-content: center;
@@ -31,7 +32,8 @@ html, body { /* makes body cover the whole page */
     min-height: 28rem;
     width: 100%;
     gap: 25px;
-    overflow-x: auto; /* allows horizontal scrolling */
+    
+    overflow: visible;
     
     
 
@@ -435,6 +437,7 @@ html, body { /* makes body cover the whole page */
     width: 100%;
     gap: 1rem;
     border-bottom: 1px solid rgb(255, 255, 255);
+    
 }
 
 .headerimage {
@@ -509,6 +512,20 @@ html, body { /* makes body cover the whole page */
     font-size: 1.5rem;
 }
 
+.menubutton {
+    margin-left: 5%;
+    font-size: 2rem;
+    color: white;
+}
+
+.wave {
+    
+    position: absolute;
+    bottom: 0;
+    left:0;
+    display: none;;
+  }
+
 
 @media (max-width: 960px) {
     .headertext{
@@ -536,13 +553,24 @@ html, body { /* makes body cover the whole page */
 
     .header {
         position: static;
-        width: 100%;
+        width: 100%;     
+    }
+
+    .headerimage {
+        margin: auto;
+    }
+
+    .menubutton {
+        margin-left: 0%;
+        position: absolute;
+        
     }
     
 
     .headertext, .navbar {
         display: none; /* hides the header text and navbar on small screens */;
     }
+    
 
     .mainsection > :nth-child(2) {
         display:none; /* hides the image on small screens */
@@ -553,6 +581,7 @@ html, body { /* makes body cover the whole page */
         width: 100%;
         flex-direction: column;
         height: auto;
+        
         
     }
 
@@ -566,8 +595,12 @@ html, body { /* makes body cover the whole page */
     min-height: auto;
   }
 
-  .scrollingimages, .callForAction {
+  .scrollingimages, .callForAction{
     padding-top: 20%;
+    padding-bottom: 20%;
+  }
+
+  .infos {
     padding-bottom: 20%;
   }
 
@@ -643,6 +676,14 @@ html, body { /* makes body cover the whole page */
     height: auto;
     margin: 0;
   }
+
+  .wave {
+    display: initial;
+    position: absolute;
+    bottom: -0.5%;
+    left:0;
+  }
+
 
 }
 
