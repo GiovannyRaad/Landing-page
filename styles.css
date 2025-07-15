@@ -21,496 +21,493 @@ html, body { /* makes body cover the whole page */
     
 }
 
-@media (max-width: 1024px) {
-    .mainsection, .infos, .scrollingimages, .callForAction{ /*main sections of the page */
-        display: flex;
-        background-color: rgb(28, 38, 56);
-        align-content: center;
-        justify-content: center;
-        height: 65vh;
-        min-height: 28rem;
-        width: 100%;
-        gap: 25px;
-        overflow-x: auto; /* allows horizontal scrolling */
-        
-        
 
-    }
-
-
-
-    .mainsection > :nth-child(1){ /*Main title div */
-        display: flex;
-        max-height: inherit;
-        flex: 1;
-        align-items: center;
-        justify-content: center;
-        
-
-        
-
-    }
-
-    .mainsection > :nth-child(2){ /*image div*/
-        align-content: center;
-        flex: 1;
-        
-        
-    }
-
-    .coverimg{
-        height: 50%;
-        
-    }
-
-    .maintitle{ 
-        flex-direction: column;
-        flex-wrap: wrap;
-        height: 50%;
-        aspect-ratio: 16 / 9;
-        
-        
-        
-    }
-
-    .maintitle > h2{
-        font-size: 2.8rem;
-        color: rgb(255, 255, 255);
-        font-weight: bold;
-        font-family: "Playfair Display", serif; /* sets a different font for the title */
-    }
-
-    .maintitle > p{ /* desc */
-        font-size: 1.1rem;
-        color: rgb(196, 196, 196)
-    }
-
-
-    .generalbutton{ /* button tempplate */
-        position: relative; /* allows ::before to be position relative to button */
-        overflow: hidden;
-        ;
-        background-color: darkcyan;
-        color: white;
-
-        font-size: 1rem;
-        font-weight: bold;
-
-        /* fix the height */
-        height: 3rem;
-
-        /* aspect ratio */
-        aspect-ratio: 16 / 5;
-
-        /* flex item controls */
-        flex-shrink: 0;
-        flex-grow: 0;
-
-        /* display block/inline-block */
-        display: inline-block;
-
-        border-radius: 10px;
-        border: none;
-        
-        transition: all 0.5s ease-in-out; /* smooth transition for hover effect */
-        
+.mainsection, .infos, .scrollingimages, .callForAction{ /*main sections of the page */
+    display: flex;
+    background-color: rgb(28, 38, 56);
+    align-content: center;
+    justify-content: center;
+    height: 65vh;
+    min-height: 28rem;
+    width: 100%;
+    gap: 25px;
+    overflow-x: auto; /* allows horizontal scrolling */
     
-    }
+    
 
-    .generalbutton::before {
-        content: "";
-        position: absolute;
-        background: linear-gradient(
-        0deg, 
-        transparent, 
-        transparent 10%, 
-        rgba(0,255,255,0.5)
-    );
-        height: 100%;
-        width: 100%;
-        opacity: 1;
-        object-fit: cover;
-
-        /* positions top left (but outside) */
-        top: 0;
-        left: -125%;
-
-        rotate: 45deg;
-        transition: all 0.5s ease-in-out; /* smooth transition for hover effect */
-        
-
-    }
-
-    .generalbutton:hover::before{
-        left: 100%; /* moves the background to the right on hover */
-    }
-
-    .generalbutton:hover {
-        color: rgb(0, 0, 0); /* changes text color on hover */
-        background-color: rgb(255, 255, 255); /* changes background color on hover */
-        box-shadow: 0 0px 5px rgb(255, 255, 255);
-    }
-
-    .infos {
-        background-color: white;
-        flex-direction: column;
-        font-size: 2rem;
-        overflow: visible; /* allows the infocards to overflow (content inside is slightly taller) */
-        
-    }
-
-    .infos > :nth-child(1){ /*title */
-        flex: 0.2;
-        text-align: center;
-        
-    }
-
-
-
-    .infocards{ /*container of infocards */
-        display: flex;
-        flex: 0.8;
-        justify-content: center;
-        max-height: 80%;
-        gap: 5%;
-
-        font-size: clamp(1rem, 6vw, 2rem); /* responsive font size */
-        
-        
-    }
-    .infocard {
-        aspect-ratio: 1 / 2;
-        height: 100%;
-        
-        
-        display: flex;
-        flex-direction: column;
-        
-    }
-
-    .infoimg{
-        aspect-ratio: 1 / 1;
-        flex:0.5;
-        height: 50%;
-        border: 5px solid rgb(0, 132, 255);
-        border-radius: 15px;
-        overflow: hidden;
-        
-        
-    }
-
-    .infoimg > :first-child{
-        object-fit: cover;
-        height: 100%;
-        width: 100%;
-        aspect-ratio: inherit;
-        
-        
-    }
-
-    .caption{ /* of the infocards */
-        flex:0.5;
-        text-align: center;
-        font-weight: bold;
-    }
-
-
-    .scrollingimages{ /* the section */
-        background-color: rgb(214, 214, 214);
-        align-items: center;
-        justify-content: center;
-        overflow-x: hidden; /* hides the scrollbar */
-        white-space: nowrap;
-    }
-
-    .scrollcontainer{ /* contains the scrollimgs, is inside scrollingimges */
-        display: flex;
-        gap: 7vw;
-        animation: horizontalImgScroll 20s linear infinite alternate;
-
-
-    }
-
-    .scrollimg{
-        aspect-ratio: 4 / 5;
-        width: 17vw;
-        min-width: 200px;
-        background-color: rgb(255, 255, 255);
-        border: 5px solid black;
-        border-radius: 7px;
-        overflow: hidden;
-
-    }
-
-    .scrollimg > *{
-        height: 100%;
-        width: 100%;
-        aspect-ratio: inherit;
-        object-fit: cover;
-    }
-
-    @keyframes horizontalImgScroll {
-        0% {transform: translateX(-25%); }
-        100% {transform: translateX(25%);}
-    }
-
-    .callForAction {
-        background-color: white;
-        align-items: center;
-        height: 28rem;
-    }
-
-    .signupwrapper { /* bottom sign up box */
-        display: flex;
-        height: 40%;
-        width: 75%;
-        background-color: rgb(48, 130, 185);
-        border-radius: 10px;
-        
-        
-
-    }
-
-    .signupwrapper > :nth-child(1) {
-        flex: 0.75;
-        display: flex;
-        flex-direction: column;
-        color: white;
-        align-items: center;
-        justify-content: center;
-        
-    }
-
-    .signupwrapper > :nth-child(2) {
-        align-content: center;
-        
-    }
-
-    .signupwrapper button {
-        border: 2px solid white;
-        background-color: transparent;
-        height: 35%;
-        font-size: 1.3rem;
-
-    }
-    .signupwrapper h3 {
-        font-size: 2.2rem;
-    }
-
-    .signupwrapper p {
-        font-size: 1.2rem;
-    }
-
-    .signupwrapper h3,
-    .signupwrapper p {
-        margin: 0;
-    }
-
-    .copyrightFooter, .footer {
-        background-color: rgb(28, 38, 56);
-        color: white;
-        display: flex;
-        align-items: center;
-        
-    }
-
-    .footerwrapper::before { /*white separator line */
-        content: "";
-        width: 90%;
-        height: 1px;
-        background-color: rgb(202, 202, 202);
-        position: absolute;
-    }
-
-    .footerwrapper {
-        position: relative;
-        display: flex;
-        width: 100%;
-        margin: 2rem;
-        justify-content: center;
-        
-    }
-
-
-    .newsletter {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        font-size: 1.2rem;
-        margin: 5rem;
-        margin-left: 8%;
-        
-    }
-
-    .newsletter h3 {
-        font-size: 2.1rem;
-        color: white;
-        margin-bottom: 0;
-        transition: text-shadow 0.3s ease-in-out; /* smooth transition for hover effect */
-    }
-
-
-    .newsletter p {
-        font-size: 1rem;
-        color: white;
-    }
-
-    .newsletter form {
-        display: flex;
-        width: 100%;
-        height: 2rem;
-        align-items: center;
-        margin-top: 0.5rem;
-        
-    }
-
-    .newsletter input {
-        flex: 0.75;
-        padding: 0.5rem;
-        border: none;
-        border-radius: 5px;
-        margin-right: 0.5rem;
-        
-        height: 100%;
-    }
-
-    .newsletter button {
-        flex: 0.25;
-        font-size: 0.8rem;
-    }
-
-    .socials h3 {
-        font-size: 2.1rem;
-    }
-
-    .socials ul {
-        display: flex; /* adjust spacing as needed */
-        justify-content: space-between; /* aligns items to the left */
-        padding: 0;
-        margin: 0;
-    }
-
-    .socials li {
-        position: relative;
-        list-style: none; 
-    }
-
-    .socials a {
-        text-decoration: none;
-        color: white;
-        font-size: 2rem;
-    }
-
-    .fab {
-        transition: color 0.2s ease-in-out; /* hover effect */
-    }
-
-    .fa-facebook-f:hover {
-        color: rgb(24, 119, 242)
-
-    }
-
-    .fa-whatsapp:hover{
-        color: rgb(37, 211, 102)
-
-    }
-
-    .fa-instagram:hover  {
-        color: rgb(180, 58, 95);
-    }
-
-    .fa-tiktok:hover {
-        color: rgb(0, 223, 193);
-    }
-
-    .header {
-        background-color: rgb(28, 38, 56);
-        color: white;
-        height: 10vh;
-        display: flex;
-        align-items: center;
-        position: fixed;
-        z-index: 9999;
-        width: 100%;
-        gap: 1rem;
-        border-bottom: 1px solid rgb(255, 255, 255);
-    }
-
-    .headerimage {
-        aspect-ratio: 1 / 1;
-        height: 100%;
-        margin: 1%;
-    }
-
-    .headerimage img{
-        height: 100%;
-        width: 100%;
-        aspect-ratio: inherit;
-        object-fit: cover;
-    }
-
-    .headertext a {
-        font-size: 2rem;
-        text-decoration: none;
-        font-weight: bold;
-        color: white;
-        
-    }
-
-    .navbar {
-        display: flex;
-        margin-left: auto;
-        margin-right: 20%;
-    }
-
-    .navlist {
-        display: flex;
-        gap: 2rem;
-        
-    }
-
-    .navlist li {
-        position: relative;
-        list-style: none;
-        display: flex;
-        overflow: hidden;;
-
-        
-        
-    }
-
-    .navlist li::after, .navlist li::before {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 5%;
-        background-color: white;
-        transition: all 0.3s ease-in-out; /* smooth transition for hover effect */
-        
-    }
-
-    .navlist li::before {
-        left: -100%; /* positions before animation */
-    }
-
-    .navlist li::after {
-        bottom: 0;
-        left: 100%; /*postition before animation */
-    }
-
-    .navlist li:hover::before, .navlist li:hover::after {
-        left: 0; /* moves the nimation to the center on hover */
-    }
-
-    .navlist a {
-        color: white;
-        text-decoration: none;
-        font-size: 1.5rem;
-    }
 }
 
 
+
+.mainsection > :nth-child(1){ /*Main title div */
+    display: flex;
+    max-height: inherit;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    
+
+    
+
+}
+
+.mainsection > :nth-child(2){ /*image div*/
+    align-content: center;
+    flex: 1;
+    
+    
+}
+
+.coverimg{
+    height: 50%;
+    
+}
+
+.maintitle{ 
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 50%;
+    aspect-ratio: 16 / 9;
+    
+    
+    
+}
+
+.maintitle > h2{
+    font-size: 2.8rem;
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    font-family: "Playfair Display", serif; /* sets a different font for the title */
+}
+
+.maintitle > p{ /* desc */
+    font-size: 1.1rem;
+    color: rgb(196, 196, 196)
+}
+
+
+.generalbutton{ /* button tempplate */
+    position: relative; /* allows ::before to be position relative to button */
+    overflow: hidden;
+    ;
+    background-color: darkcyan;
+    color: white;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    /* fix the height */
+    height: 3rem;
+
+    /* aspect ratio */
+    aspect-ratio: 16 / 5;
+
+    /* flex item controls */
+    flex-shrink: 0;
+    flex-grow: 0;
+
+    /* display block/inline-block */
+    display: inline-block;
+
+    border-radius: 10px;
+    border: none;
+    
+    transition: all 0.5s ease-in-out; /* smooth transition for hover effect */
+    
+
+}
+
+.generalbutton::before {
+    content: "";
+    position: absolute;
+    background: linear-gradient(
+    0deg, 
+    transparent, 
+    transparent 10%, 
+    rgba(0,255,255,0.5)
+);
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+    object-fit: cover;
+
+    /* positions top left (but outside) */
+    top: 0;
+    left: -125%;
+
+    rotate: 45deg;
+    transition: all 0.5s ease-in-out; /* smooth transition for hover effect */
+    
+
+}
+
+.generalbutton:hover::before{
+    left: 100%; /* moves the background to the right on hover */
+}
+
+.generalbutton:hover {
+    color: rgb(0, 0, 0); /* changes text color on hover */
+    background-color: rgb(255, 255, 255); /* changes background color on hover */
+    box-shadow: 0 0px 5px rgb(255, 255, 255);
+}
+
+.infos {
+    background-color: white;
+    flex-direction: column;
+    font-size: 2rem;
+    overflow: visible; /* allows the infocards to overflow (content inside is slightly taller) */
+    
+}
+
+.infos > :nth-child(1){ /*title */
+    flex: 0.2;
+    text-align: center;
+    
+}
+
+
+
+.infocards{ /*container of infocards */
+    display: flex;
+    flex: 0.8;
+    justify-content: center;
+    max-height: 80%;
+    gap: 5%;
+
+    font-size: clamp(1rem, 6vw, 2rem); /* responsive font size */
+    
+    
+}
+.infocard {
+    aspect-ratio: 1 / 2;
+    height: 100%;
+    
+    
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.infoimg{
+    aspect-ratio: 1 / 1;
+    flex:0.5;
+    height: 50%;
+    border: 5px solid rgb(0, 132, 255);
+    border-radius: 15px;
+    overflow: hidden;
+    
+    
+}
+
+.infoimg > :first-child{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    aspect-ratio: inherit;
+    
+    
+}
+
+.caption{ /* of the infocards */
+    flex:0.5;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.scrollingimages{ /* the section */
+    background-color: rgb(214, 214, 214);
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden; /* hides the scrollbar */
+    white-space: nowrap;
+}
+
+.scrollcontainer{ /* contains the scrollimgs, is inside scrollingimges */
+    display: flex;
+    gap: 7vw;
+    animation: horizontalImgScroll 20s linear infinite alternate;
+
+
+}
+
+.scrollimg{
+    aspect-ratio: 4 / 5;
+    width: 17vw;
+    min-width: 200px;
+    background-color: rgb(255, 255, 255);
+    border: 5px solid black;
+    border-radius: 7px;
+    overflow: hidden;
+
+}
+
+.scrollimg > *{
+    height: 100%;
+    width: 100%;
+    aspect-ratio: inherit;
+    object-fit: cover;
+}
+
+@keyframes horizontalImgScroll {
+    0% {transform: translateX(-25%); }
+    100% {transform: translateX(25%);}
+}
+
+.callForAction {
+    background-color: white;
+    align-items: center;
+    height: 28rem;
+}
+
+.signupwrapper { /* bottom sign up box */
+    display: flex;
+    height: 40%;
+    width: 75%;
+    background-color: rgb(48, 130, 185);
+    border-radius: 10px;
+    
+    
+
+}
+
+.signupwrapper > :nth-child(1) {
+    flex: 0.75;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.signupwrapper > :nth-child(2) {
+    align-content: center;
+    
+}
+
+.signupwrapper button {
+    border: 2px solid white;
+    background-color: transparent;
+    height: 35%;
+    font-size: 1.3rem;
+
+}
+.signupwrapper h3 {
+    font-size: 2.2rem;
+}
+
+.signupwrapper p {
+    font-size: 1.2rem;
+}
+
+.signupwrapper h3,
+.signupwrapper p {
+    margin: 0;
+}
+
+.copyrightFooter, .footer {
+    background-color: rgb(28, 38, 56);
+    color: white;
+    display: flex;
+    align-items: center;
+    
+}
+
+.footerwrapper::before { /*white separator line */
+    content: "";
+    width: 90%;
+    height: 1px;
+    background-color: rgb(202, 202, 202);
+    position: absolute;
+}
+
+.footerwrapper {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin: 2rem;
+    justify-content: center;
+    
+}
+
+
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin: 5rem;
+    margin-left: 8%;
+    
+}
+
+.newsletter h3 {
+    font-size: 2.1rem;
+    color: white;
+    margin-bottom: 0;
+    transition: text-shadow 0.3s ease-in-out; /* smooth transition for hover effect */
+}
+
+
+.newsletter p {
+    font-size: 1rem;
+    color: white;
+}
+
+.newsletter form {
+    display: flex;
+    width: 100%;
+    height: 2rem;
+    align-items: center;
+    margin-top: 0.5rem;
+    
+}
+
+.newsletter input {
+    flex: 0.75;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    margin-right: 0.5rem;
+    
+    height: 100%;
+}
+
+.newsletter button {
+    flex: 0.25;
+    font-size: 0.8rem;
+}
+
+.socials h3 {
+    font-size: 2.1rem;
+}
+
+.socials ul {
+    display: flex; /* adjust spacing as needed */
+    justify-content: space-between; /* aligns items to the left */
+    padding: 0;
+    margin: 0;
+}
+
+.socials li {
+    position: relative;
+    list-style: none; 
+}
+
+.socials a {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+}
+
+.fab {
+    transition: color 0.2s ease-in-out; /* hover effect */
+}
+
+.fa-facebook-f:hover {
+    color: rgb(24, 119, 242)
+
+}
+
+.fa-whatsapp:hover{
+    color: rgb(37, 211, 102)
+
+}
+
+.fa-instagram:hover  {
+    color: rgb(180, 58, 95);
+}
+
+.fa-tiktok:hover {
+    color: rgb(0, 223, 193);
+}
+
+.header {
+    background-color: rgb(28, 38, 56);
+    color: white;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    z-index: 9999;
+    width: 100%;
+    gap: 1rem;
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.headerimage {
+    aspect-ratio: 1 / 1;
+    height: 100%;
+    margin: 1%;
+}
+
+.headerimage img{
+    height: 100%;
+    width: 100%;
+    aspect-ratio: inherit;
+    object-fit: cover;
+}
+
+.headertext a {
+    font-size: 2rem;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    
+}
+
+.navbar {
+    display: flex;
+    margin-left: auto;
+    margin-right: 20%;
+}
+
+.navlist {
+    display: flex;
+    gap: 2rem;
+    
+}
+
+.navlist li {
+    position: relative;
+    list-style: none;
+    display: flex;
+    overflow: hidden;;
+
+    
+    
+}
+
+.navlist li::after, .navlist li::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 5%;
+    background-color: white;
+    transition: all 0.3s ease-in-out; /* smooth transition for hover effect */
+    
+}
+
+.navlist li::before {
+    left: -100%; /* positions before animation */
+}
+
+.navlist li::after {
+    bottom: 0;
+    left: 100%; /*postition before animation */
+}
+
+.navlist li:hover::before, .navlist li:hover::after {
+    left: 0; /* moves the nimation to the center on hover */
+}
+
+.navlist a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
 
 
 @media (max-width: 960px) {
@@ -552,12 +549,11 @@ html, body { /* makes body cover the whole page */
     }
 
     .mainsection {
+        
         width: 100%;
         flex-direction: column;
         height: auto;
         
-    
-
     }
 
     .maintitle {
@@ -566,6 +562,7 @@ html, body { /* makes body cover the whole page */
 
   .infos {
     width: 100%;
+    height: auto;
   }
 
   .infocards {
@@ -577,16 +574,22 @@ html, body { /* makes body cover the whole page */
   }
 
   .infocard {
+    display: flex;
     width: 40%;
     height: auto;
     overflow: hidden;
     flex: none;
+    aspect-ratio: 2 / 3;
+    gap: 0%;
   }
 
-  .scrollingimages {
-    display: none;
-    
+  .infoimg {
+    flex: 0.75;
+    border-width: 3px;
   }
+
+
+
 
   .footer {
     flex-direction: column;;
