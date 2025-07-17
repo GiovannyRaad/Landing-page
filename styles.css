@@ -552,7 +552,7 @@ html, body { /* makes body cover the whole page */
     
 
     .header {
-        position: relative;
+        position: relative; /* otherwise menu button will "stick" to html when scrolling */
         width: 100%;     
     }
 
@@ -593,6 +593,7 @@ html, body { /* makes body cover the whole page */
     width: 100%;
     height: auto;
     min-height: auto;
+    overflow: visible;;
   }
 
   .scrollingimages, .callForAction{
